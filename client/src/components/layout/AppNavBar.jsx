@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/plainb-logo.svg";
+import logo from "../../assets/images/event.png";
 import axios from "axios";
 
 const AppNavBar = () => {
@@ -56,13 +56,22 @@ const AppNavBar = () => {
             {/* Navbar */}
             <nav className="navbar sticky-top bg-white navbar-expand-lg navbar-light py-3 shadow-sm">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">
+                    <Link
+                        className="navbar-brand d-flex align-items-center justify-content-center "
+                        to="/"
+                    >
                         <img
                             className="img-fluid"
                             src={logo}
                             alt="ELP Logo"
-                            width="100px"
-                        />
+                            width="30px"
+                        />{" "}
+                        <span
+                            className="navbar-brand text-primary fw-bold fs-3 p-1"
+                            href="#"
+                        >
+                            ELP
+                        </span>
                     </Link>
 
                     <button
