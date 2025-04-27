@@ -27,9 +27,10 @@ mongoose.connect(URL, option).then((res) => {
 app.use(cookieParser())
 // 🔥 CORRECT CORS setup
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://os-b-8-assignment-fa-5-m-26-tsrv.vercel.app'],
     credentials: true,
 }));
+
 app.use(helmet())
 app.use(mongoSanitize())
 app.use(xss())
