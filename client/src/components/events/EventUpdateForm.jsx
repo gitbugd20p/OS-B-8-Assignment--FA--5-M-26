@@ -19,18 +19,9 @@ const EventUpdateForm = ({ initialData }) => {
         e.preventDefault();
 
         try {
-            const token = document.cookie.split("=")[1]; // grab JWT from cookie
-            const config = {
-                headers: {
-                    token: token,
-                    user_id: localStorage.getItem("user_id"),
-                },
-            };
-
             const res = await axios.post(
                 `https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/UpdateEvent/${formData._id}`,
                 formData,
-                config,
                 { withCredentials: true }
             );
 
