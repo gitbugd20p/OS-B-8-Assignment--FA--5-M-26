@@ -36,11 +36,7 @@ const EventDetailsPage = () => {
             const token = localStorage.getItem("token"); // Assuming token is stored in localStorage
             const response = await axios.delete(
                 `https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/DeleteEvent/${id}`,
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
+                { withCredentials: true }
             );
 
             // Notify success
