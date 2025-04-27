@@ -30,7 +30,8 @@ const EventUpdateForm = ({ initialData }) => {
             const res = await axios.post(
                 `https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/UpdateEvent/${formData._id}`,
                 formData,
-                config
+                config,
+                { withCredentials: true }
             );
 
             if (res.data.status === "success") {
