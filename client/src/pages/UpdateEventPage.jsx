@@ -13,7 +13,8 @@ const UpdateEventPage = () => {
         const fetchEvent = async () => {
             try {
                 const res = await axios.get(
-                    `https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetEventDetails/${id}`
+                    `https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetEventDetails/${id}`,
+                    { withCredentials: true }
                 );
                 if (res.data.status === "success") {
                     setEventData(res.data.data);
