@@ -1,15 +1,12 @@
 const { UserRegisterService, VerifyPasswordService } = require("../services/UserServices");
 
-// Determine environment
-const isProd = process.env.NODE_ENV === "production";
-
 // Cookie options for both login and logout
 const cookieOptions = {
-    httpOnly: true,                            // JS cannot access the cookie
-    secure: isProd,                            // send only over HTTPS in production
-    sameSite: isProd ? "none" : "lax",      // allow cross-site in production
-    path: "/",                               // cookie valid for entire site
-    maxAge: 24 * 60 * 60 * 1000,               // 1 day
+    httpOnly: true,            // JS can’t read document.cookie
+    secure: true,            // must be HTTPS for sameSite:none
+    sameSite: 'none',          // allow cross-site XHR/fetch
+    path: '/',             // send on every route
+    maxAge: 24 * 60 * 60 * 1000,  // 1 day
 };
 
 // Registration handler (public)

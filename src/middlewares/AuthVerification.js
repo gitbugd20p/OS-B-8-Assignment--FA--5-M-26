@@ -2,7 +2,8 @@ const { DecodeToken } = require("../utility/TokenHelper");
 module.exports = (req, res, next) => {
 
   // Receive Token
-  let token = req.headers['token']
+  // let token = req.headers['token']
+  const token = req.cookies.token;       // auth token from cookie
   if (!token) {
     token = req.cookies['token']
   }

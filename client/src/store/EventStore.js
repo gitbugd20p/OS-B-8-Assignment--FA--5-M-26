@@ -34,7 +34,7 @@ const EventStore = create((set) => ({
 
 	MyEventsRequest: async () => {
 		try {
-			const res = await axios.get('https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetMyEvents');
+			const res = await axios.get('https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetMyEvents', { withCredentials: true });
 			if (res.data.status === "success") {
 				set({ MyEvents: res.data.data });
 			}
