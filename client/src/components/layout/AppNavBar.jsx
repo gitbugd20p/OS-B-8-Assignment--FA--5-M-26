@@ -14,9 +14,12 @@ const AppNavBar = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.get("/api/v1/UserLogout", {
-                withCredentials: true,
-            });
+            await axios.get(
+                "https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/UserLogout",
+                {
+                    withCredentials: true,
+                }
+            );
 
             localStorage.removeItem("isLoggedIn");
             setIsLoggedIn(false);

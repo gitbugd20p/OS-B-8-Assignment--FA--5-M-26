@@ -25,7 +25,11 @@ mongoose.connect(URL, option).then((res) => {
 
 
 app.use(cookieParser())
-app.use(cors())
+// 🔥 CORRECT CORS setup
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+}));
 app.use(helmet())
 app.use(mongoSanitize())
 app.use(xss())

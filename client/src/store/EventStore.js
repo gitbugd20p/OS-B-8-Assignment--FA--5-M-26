@@ -10,7 +10,7 @@ const EventStore = create((set) => ({
 	// Fetch all events
 	AllEventsRequest: async () => {
 		try {
-			const res = await axios.get('/api/v1/GetAllEvents');
+			const res = await axios.get('https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetAllEvents');
 			if (res.data.status === "success") {
 				set({ AllEvents: res.data.data });
 			}
@@ -22,7 +22,7 @@ const EventStore = create((set) => ({
 	// Fetch single event by ID
 	SingleEventRequest: async (id) => {
 		try {
-			const res = await axios.get(`/api/v1/GetEventDetails/${id}`);
+			const res = await axios.get(`https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetEventDetails/${id}`);
 			if (res.data.status === "success") {
 				set({ SingleEvent: res.data.data });
 			}
@@ -34,7 +34,7 @@ const EventStore = create((set) => ({
 
 	MyEventsRequest: async () => {
 		try {
-			const res = await axios.get('/api/v1/GetMyEvents');
+			const res = await axios.get('https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetMyEvents');
 			if (res.data.status === "success") {
 				set({ MyEvents: res.data.data });
 			}

@@ -12,7 +12,9 @@ const UpdateEventPage = () => {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const res = await axios.get(`/api/v1/GetEventDetails/${id}`);
+                const res = await axios.get(
+                    `https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/GetEventDetails/${id}`
+                );
                 if (res.data.status === "success") {
                     setEventData(res.data.data);
                 }

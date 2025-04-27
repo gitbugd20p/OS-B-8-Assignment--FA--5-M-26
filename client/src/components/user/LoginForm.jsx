@@ -13,7 +13,7 @@ const LoginForm = () => {
 
         try {
             const res = await axios.get(
-                `/api/v1/VerifyLogin/${email}/${password}`,
+                `https://os-b-8-assignment-fa-5-m-26.vercel.app/api/v1/VerifyLogin/${email}/${password}`,
                 {
                     withCredentials: true,
                 }
